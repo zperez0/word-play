@@ -16,6 +16,7 @@ let emptyArray = [];
 strArray.forEach(function(str) {
   if (strArray.length >= 3) {
 emptyArray.push(str);
+
   }
 });
 
