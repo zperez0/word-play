@@ -3,50 +3,30 @@ $('form#wordPlay').submit(function(event) {
   event.preventDefault();
 
 const sentenceOne = $('input#sentenceOne').val();
-// const wordCount = wordCounter(sentenceOne)
-
 $('.sentenceOne').text(sentenceOne);
 
-$('display').show();
+$('#display').show();
 $('form#wordPlay').hide();
 
 // the user will insert a sentence and it will become an array
-let str = sentenceOne;
-
-// let str = sentenceArray;
-
-let strArray = str.split(' ');
-console.log(strArray);
-
-// const words = strArray.split(' ');
-// console.log(words[3]);
-
+let strArray = sentenceOne.split(' ')
 let emptyArray = [];
-// let wordCount = 3;
+
 
 strArray.forEach(function(str) {
-  emptyArray.push(str.join());
-
-
-// strArray.forEach(function(word) {
-//   emptyStr.push(word.join());
-
-
-// strArray.forEach(function(str) {
-// emptyStr.split(words[3]);
-
-
-
-
-// const str = sentenceOne;
-
-// const strArray = str.split();
-// console.log(strArray);
-
-
-// const words = str.split(' ');
-
-
+  if (strArray.length >= 3) {
+emptyArray.push(str);
+  }
 });
+
+//reverse the sentence
+emptyArray.reverse();
+//join the sentence
+let finalSentence = emptyArray.join(' ');
+
+
+//print
+$('#display').append(finalSentence);
+console.log(finalSentence);
 });
 });
